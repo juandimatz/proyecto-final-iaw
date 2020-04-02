@@ -1,0 +1,29 @@
+
+  <ul class="card-list">
+              
+    <div *ngFor="let product of getShoes()">
+          
+      <div *ngIf="product.price < getMaxPrice() && product.price > getMinPrice()">
+          
+        <div class="card">
+        
+          <a (click)="goToDetail($event, product.id, product.page)">
+            <img src="{{product.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{product.brand}}</h5>
+              <p class="card-text">{{product.title}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">${{product.price}}</li>
+              <li class="list-group-item">{{product.shipping}}</li>
+              <li class="list-group-item"><img src="../../../assets/css/images/{{product.page}}.png" alt=""></li>
+            </ul>
+          </a>
+        
+        </div>
+    
+      </div>
+      
+    </div>
+            
+  </ul>

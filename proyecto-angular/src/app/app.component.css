@@ -1,0 +1,48 @@
+@font-face{
+    font-family: "Raleway";
+    src: url("../assets/css/fonts/Raleway-Light.ttf");
+}
+
+@font-face{
+    font-family: "Raleway-Bold";
+    src: url("../assets/css/fonts/Raleway-Bold.ttf");
+}
+
+@font-face{
+    font-family: "Promesh";
+    src: url("../assets/css/fonts/PROMESH-Regular.ttf");
+}
+
+
+@font-face{
+    font-family: "Promesh-Mesh";
+    src: url("../assets/css/fonts/PROMESHMesh-Regular.ttf");
+}
+
+
+@font-face{
+    font-family: "Promesh-Stitch";
+    src: url("../assets/css/fonts/PROMESHStitch-Regular.ttf");
+}
+
+
+@font-face{
+    font-family: "Abeat";
+    src: url("../assets/css/fonts/ABEAKRG.TTF");
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-family: "Abeat";
+    -webkit-text-stroke: 3px #340913;
+    font-size: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    color: #D61A46;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

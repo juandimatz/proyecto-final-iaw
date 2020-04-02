@@ -1,0 +1,45 @@
+
+.card {
+    font-family: "Raleway";
+    float: left;
+    height: 467px;
+    width: 215px;
+    margin-top: 20px;
+    margin-left: 6%;
+    margin-bottom: 30px;
+    transition: color 500ms, transform 500ms;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 40px #340913;
+    transform: scale(1.20, 1.20);
+}
+
+.card-body {
+    height: 102px;
+}
+
+.card-title {
+    font-family: "Raleway-Bold";
+}
+
+.card-img-top {
+    height: 213px;
+    object-fit: contain;
+}
+
+.card-text {
+    margin-bottom: -22px;
+}
+
+.list-group-item {
+    height: 50px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+img {
+    height: 20px;
+}

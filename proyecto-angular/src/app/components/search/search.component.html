@@ -1,0 +1,32 @@
+
+
+    <form class="formulario" #projectForm="ngForm" (ngSubmit)="onSubmit(marca, precioMin, precioMax)">
+        
+        <div class="form-group">
+            <label id="label-select" for="exampleFormControlSelect1">Marca</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="brand" #brand="ngModel" [(ngModel)]="marca">
+                <option>Adidas</option>
+                <option>Asics</option>
+                <option>Converse</option>
+                <option>DC-Shoes</option>
+                <option>Fila</option>
+                <option>New-balance</option>
+                <option>Nike</option>
+                <option>Puma</option>
+                <option>Reebok</option>
+            </select>
+            
+            <label id="label-select" for="exampleFormControlSelect1">Rango de precios</label>
+            <div class="form-row">
+                <div class="form-group col-md-6" id="min-price">
+                    <input class="form-control" type="number" placeholder="Precio minimo" name="minPrice" #minPrice="ngModel" [(ngModel)]="precioMin">
+                </div>
+                <div class="form-group col-md-6" id="max-price">
+                    <input class="form-control" type="number" placeholder="Precio maximo" name="maxPrice" #maxPrice="ngModel" [(ngModel)]="precioMax">
+                </div>
+            </div>
+
+        </div>
+        
+        <button type="submit" value="enviar" class="btn btn-primary">Buscar</button>
+    </form>

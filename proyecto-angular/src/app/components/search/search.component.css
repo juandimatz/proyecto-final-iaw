@@ -1,0 +1,74 @@
+@font-face{
+    font-family: "Raleway";
+    src: url("../../../assets/css/fonts/Raleway-Light.ttf");
+}
+
+@font-face{
+    font-family: "Raleway-Bold";
+    src: url("../../../assets/css/fonts/Raleway-Bold.ttf");
+}
+
+.formulario {
+    margin-top: 30px;
+    text-align: center;
+    
+}
+
+#label-select {
+    font-family: "Raleway";
+    font-size: 25px;
+    color:  white;
+    margin-top: 10px;
+}
+
+.form-control {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-control:focus {
+    border-color: #D61A46;
+    box-shadow: 0 0 0 0.1rem #D61A46;
+}
+
+.form-row {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-md-6 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#min-price {
+    padding-right: 10px;
+}
+
+#max-price {
+    padding-left: 10px;
+}
+
+.col-md-6 input {
+    width: 100%;
+}
+
+.btn-primary {
+    width: 25%;
+    background-color: #D61A46;
+    border-color: #D61A46;
+    transition: color 500ms
+}
+
+.btn-primary:visited {
+    background-color: rgb(173, 22, 60);
+    border-color: rgb(173, 22, 60);
+}
+
+.btn-primary:hover {
+    background-color: rgb(173, 22, 60);
+    border-color: rgb(173, 22, 60);
+}
+
