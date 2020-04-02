@@ -44,7 +44,7 @@ function searchDafiti(marca) {
                     
                     zapatillas.push(calzado);
                 });
-                
+
                 return zapatillas;
             });
 }
@@ -64,8 +64,8 @@ function searchNetshoes(marca) {
                     
                     $brand = $title.split(" ")[1];
                     
-                    $price = parseFloat($element.find('section.ff-ajax-price a pr').attr('data-final-price')).toFixed(2);
-                    
+                    $price = parseFloat($element.find('div.pr').attr('data-final-price').substr(0,4)).toFixed(2);
+                    //console.log($price);
                     $image = $element.find('.card-link img').attr('data-src');
                     
                     $detailUrl = $element.find('.card-link').attr('href');
@@ -74,7 +74,7 @@ function searchNetshoes(marca) {
                     var calzado = {
                         brand: $brand,
                         title: $title,
-                        price: '5000',
+                        price: $price,
                         shipping: 'Cargo de envio',
                         image: $image,
                         id: $urlArray[3],
