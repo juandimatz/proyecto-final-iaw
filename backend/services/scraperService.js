@@ -65,7 +65,7 @@ function searchNetshoes(marca) {
                     $brand = $title.split(" ")[1];
                     
                     $price = parseFloat($element.find('div.pr').attr('data-final-price').substr(0,4)).toFixed(2);
-                    //console.log($price);
+                    
                     $image = $element.find('.card-link img').attr('data-src');
                     
                     $detailUrl = $element.find('.card-link').attr('href');

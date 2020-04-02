@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ScraperService } from '../../services/scraper.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detail',
@@ -19,7 +20,8 @@ export class DetailComponent implements OnInit {
   constructor(
     private _scraperService: ScraperService,
     private _router: Router,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _location: Location
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +45,10 @@ export class DetailComponent implements OnInit {
       }
     );
 
+  }
+
+  goBack() {
+    this._location.back();
   }
 
 }
