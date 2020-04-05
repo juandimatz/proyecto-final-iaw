@@ -12,7 +12,7 @@
 
 .card:hover {
     box-shadow: 0px 0px 40px #340913;
-    transform: scale(1.20, 1.20);
+    transform: translateY(-40px);
 }
 
 .card-body {

@@ -47,6 +47,10 @@ export class DetailComponent implements OnInit {
 
   }
 
+  goToShop(url) {
+    window.open(url);
+  }
+
   goBack() {
     this._location.back();
   }

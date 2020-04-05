@@ -17,22 +17,22 @@ export class ResultsComponent implements OnInit {
   constructor(
     private _scraperService: ScraperService,
     private _router: Router,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
   ) {
-    this.minPrice = 0;
-    this.maxPrice = 10000;
+    this.minPrice = (localStorage.getItem("minPrice") != "undefined") ? localStorage.getItem("minPrice") : 0;
+    this.maxPrice = (localStorage.getItem("maxPrice") != "undefined") ? localStorage.getItem("maxPrice") : 15000;
   }
 
   ngOnInit() {
     this._route.params.subscribe((params) => {
       
-      if (params['minPrice'] != "undefined") {
+      /*if (params['minPrice'] != "undefined") {
         this.minPrice = parseInt(params['minPrice']);
       }
       
       if (params['maxPrice'] != "undefined") {
         this.maxPrice = parseInt(params['maxPrice']);
-      }
+      }*/
       
       if (params['marca'] == "undefined") {
         this.getProducts();

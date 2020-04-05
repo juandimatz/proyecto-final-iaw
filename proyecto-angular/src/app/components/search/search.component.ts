@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchObject } from '../../models/SearchObejct';
-import { ScraperService } from '../../services/scraper.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
 
@@ -17,7 +15,7 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
   ) {
     
   }
@@ -27,10 +25,11 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit(brand, minPrice, maxPrice) {
-    let url = "results/" + minPrice + "/" + maxPrice + "/" + brand;
+    localStorage.setItem("minPrice", minPrice);
+    localStorage.setItem("maxPrice", maxPrice);
+    
+    let url = "results/" + brand.toLowerCase();
     this._router.navigate([url]);
   }
 
-  
-  
 }

@@ -9,7 +9,8 @@ const appRoutes: Routes = [
     {path: '', component: SearchComponent},
     {path: 'search', component: SearchComponent},
     {path: 'results', component: ResultsComponent},
-    {path: 'results/:minPrice/:maxPrice/:marca', component: ResultsComponent},
+    //{path: 'results/:minPrice/:maxPrice/:marca', component: ResultsComponent},
+    {path: 'results/:marca', component: ResultsComponent},
     {path: 'detail/:tienda/:id', component: DetailComponent}
 ];
 

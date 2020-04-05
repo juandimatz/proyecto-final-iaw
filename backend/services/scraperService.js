@@ -121,9 +121,9 @@ function productDetailsDafiti(url) {
                     title: $title,
                     price: $price,
                     images: $images,
-                    details: $details
+                    details: $details,
+                    url: "https://www.dafiti.com.ar/" + url
                 }
-                
                 return zapatilla;
             });
 }
@@ -164,9 +164,9 @@ function productDetailsNetshoes(url) {
             title: $title,
             price: $price,
             images: $images,
-            details: $details
+            details: $details,
+            url: "https://www.netshoes.com.ar/" + url
         }
-        
         return zapatilla;
     });
 }

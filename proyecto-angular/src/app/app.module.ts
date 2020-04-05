@@ -23,7 +23,7 @@ import { DetailComponent } from './components/detail/detail.component';
     FormsModule,
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
   ],
   bootstrap: [AppComponent]
 })
