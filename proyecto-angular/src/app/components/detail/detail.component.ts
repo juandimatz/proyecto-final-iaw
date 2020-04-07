@@ -13,9 +13,9 @@ import { Location } from '@angular/common';
 })
 export class DetailComponent implements OnInit {
 
-  public product;
-  public keys = [];
-  public values = [];
+  private product;
+  private keys = [];
+  private values = [];
 
   constructor(
     private _scraperService: ScraperService,
@@ -53,6 +53,18 @@ export class DetailComponent implements OnInit {
 
   goBack() {
     this._location.back();
+  }
+
+  getKeys() {
+    return this.keys;
+  }
+
+  getValues() {
+    return this.values;
+  }
+
+  getProduct() {
+    return this.product;
   }
 
 }

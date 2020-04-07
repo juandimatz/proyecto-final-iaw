@@ -13,6 +13,7 @@ export class ResultsComponent implements OnInit {
   private shoes = [];
   private maxPrice;
   private minPrice;
+  private brand;
   
   constructor(
     private _scraperService: ScraperService,
@@ -25,73 +26,48 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this._route.params.subscribe((params) => {
-      
-      /*if (params['minPrice'] != "undefined") {
-        this.minPrice = parseInt(params['minPrice']);
-      }
-      
-      if (params['maxPrice'] != "undefined") {
-        this.maxPrice = parseInt(params['maxPrice']);
-      }*/
-      
-      if (params['marca'] == "undefined") {
-        this.getProducts();
-      } else {
-        this.getBrandProducts(params['marca']);
-      }
-
+      this.brand = params['marca'];
+      this.getProducts(params['marca']);
     });
-  }
-
-  getProducts() {
-    this._scraperService.getDafitiProducts().subscribe(
-      response => {
-        response.forEach(element => {
-          this.shoes.push(element);
-        });
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    this._scraperService.getNetshoesProducts().subscribe(
-      response => {
-        response.forEach(element => {
-          this.shoes.push(element);
-        });
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
-
-  getBrandProducts(id) {
-    this._scraperService.getDafitiProductsForBrand(id).subscribe(
-      response => {
-        response.forEach(element => {
-          this.shoes.push(element);
-        });
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    this._scraperService.getNetshoesProductsForBrand(id).subscribe(
-      response => {
-        response.forEach(element => {
-          this.shoes.push(element);
-        });
-      },
-      error => {
-        console.log(error);
-      }
-    );
   }
 
   goToDetail(event, id, tienda) {
     let url = "detail/" + tienda + "/" + id;
     this._router.navigate([url]);
+  }
+
+  getProducts(marca) {
+    
+    this.getDafitiProducts(marca);
+    
+    this.getNetshoesProducts(marca);
+  
+  }
+
+  getDafitiProducts(marca) {
+    this._scraperService.getDafitiProducts(marca).subscribe(
+      response => {
+        response.forEach(element => {
+          this.shoes.push(element);
+        });
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  getNetshoesProducts(marca) {
+    this._scraperService.getNetshoesProducts(marca).subscribe(
+      response => {
+        response.forEach(element => {
+          this.shoes.push(element);
+        });
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   getMinPrice() {
@@ -103,6 +79,9 @@ export class ResultsComponent implements OnInit {
   }
 
   getShoes() {
+    for (let shoe of this.shoes) {
+      shoe.price = parseInt(shoe.price);
+    }
     return this.shoes;
   }
 

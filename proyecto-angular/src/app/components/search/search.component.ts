@@ -11,7 +11,6 @@ export class SearchComponent implements OnInit {
   public marca;
   public precioMin;
   public precioMax;
-  public products = [];
 
   constructor(
     private _router: Router,
@@ -28,7 +27,7 @@ export class SearchComponent implements OnInit {
     localStorage.setItem("minPrice", minPrice);
     localStorage.setItem("maxPrice", maxPrice);
     
-    let url = "results/" + brand.toLowerCase();
+    let url = "results/" + brand;
     this._router.navigate([url]);
   }
 

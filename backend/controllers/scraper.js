@@ -12,9 +12,7 @@ var controller = {
                     message: "Ocurrio un error en el metodo del controlador: searchDafiti"
                 });
             }
-        });
-       
-        
+        });     
     },
 
     searchNetshoes: function(req, res) {
@@ -38,8 +36,7 @@ var controller = {
                     message: "Ocurrio un error"
                 });
             }
-        });
-        
+        });    
     },
 
     productDetailsNetshoes: function(req, res) {
@@ -52,7 +49,6 @@ var controller = {
                 });
             }
         });
-        
     }
 
 }

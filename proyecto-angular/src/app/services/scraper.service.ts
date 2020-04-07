@@ -13,28 +13,23 @@ export class ScraperService {
         this.url = Global.url;
     }
 
-    getDafitiProducts(): Observable<any> {
+    getDafitiProducts(marca): Observable<any> {
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-        return this._http.get(this.url+ 'searchDafiti/', {headers: headers});
+        if (marca == 'undefined') {
+            return this._http.get(this.url+ 'searchDafiti/', {headers: headers});
+        } else {
+            return this._http.get(this.url+ 'searchDafiti/' + marca, {headers: headers});
+        }
     }
-
-    getNetshoesProducts(): Observable<any> {
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-        return this._http.get(this.url+ 'searchNetshoes/', {headers: headers});
-    }
-
-    getDafitiProductsForBrand(id): Observable<any> {
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-        return this._http.get(this.url+ 'searchDafiti/' + id, {headers: headers});
-    }
-
-    getNetshoesProductsForBrand(id): Observable<any> {
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
         
-        return this._http.get(this.url+ 'searchNetshoes/' + id, {headers: headers});
+    getNetshoesProducts(marca): Observable<any> {
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        if (marca == 'undefined') {
+            return this._http.get(this.url+ 'searchNetshoes/', {headers: headers});
+        } else {
+            return this._http.get(this.url+ 'searchNetshoes/' + marca.toLowerCase(), {headers: headers});
+        }
+        
     }
 
     getProductDetail(id, tienda): Observable<any> {
