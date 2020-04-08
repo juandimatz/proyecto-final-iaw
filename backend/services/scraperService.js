@@ -125,6 +125,7 @@ function productDetailsDafiti(url) {
                     details: $details,
                     url: "https://www.dafiti.com.ar/" + url
                 }
+                
                 return zapatilla;
             });
 }
@@ -134,7 +135,6 @@ function productDetailsNetshoes(url) {
     .then(response => response.text())
     .then(body => {
         const $ = cheerio.load(body);
-        
         let $price = $('#buy-box .price strong').attr('content');
         
         let $images = [];
@@ -151,15 +151,14 @@ function productDetailsNetshoes(url) {
             let detalle = $element.text().split(':');
             let detail = {};
             if (detalle[0] == 'Nombre') {
-                let $title = detalle[1];
+                $title = detalle[1];
             } else if (detalle[0] == 'Marca'){
-                let $brand = detalle[1];
+                $brand = detalle[1];
             } else {
                 detail[detalle[0]] = detalle[1];
                 $details.push(detail);
             }
         });
-        
         var zapatilla = {
             brand: $brand,
             title: $title,
@@ -168,6 +167,7 @@ function productDetailsNetshoes(url) {
             details: $details,
             url: "https://www.netshoes.com.ar/" + url
         }
+        
         return zapatilla;
     });
 }

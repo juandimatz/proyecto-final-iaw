@@ -34,7 +34,7 @@ export class ScraperService {
 
     getProductDetail(id, tienda): Observable<any> {
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
+        
         return this._http.get(this.url+ 'detail' + tienda + '/' + id, {headers: headers});
     }
 
